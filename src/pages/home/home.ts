@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { TimelinePage } from '../timeline/timeline'
 import { TopPage } from '../top/top'
 import { UsersPage } from '../users/users'
@@ -18,8 +18,10 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public menuCtrl: MenuController
   ) {
+    this.menuCtrl.enable(true, 'menu');
     this.mySelectedIndex = this.navParams.get('tabIndex')|| 0;
   }
 

@@ -19,19 +19,19 @@ export class MyApp {
   menuPages: any[] = [
     {
       title: 'Timeline',
-      icon: 'home',
+      icon: 'images',
       component: HomePage,
       tabIndex: 0
     },
     {
       title: 'Top',
-      icon: 'home',
+      icon: 'star',
       component: HomePage,
       tabIndex: 1
     },
     {
       title: 'Users',
-      icon: 'home',
+      icon: 'people',
       component: HomePage,
       tabIndex: 2
     },
@@ -40,12 +40,12 @@ export class MyApp {
   examplesPages: any[] = [
     {
       title: 'Grids',
-      icon: 'home',
+      icon: 'grid',
       component: ButtonsPage
     },
     {
       title: 'Buttons',
-      icon: 'home',
+      icon: 'archive',
       component: GridsPage
     },
   ];

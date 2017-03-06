@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
@@ -12,11 +12,12 @@ export class TutorialPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public menuCtrl: MenuController
   ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TutorialPage');
+    this.menuCtrl.enable(false, 'menu');
   }
 
   goToLoginPage(){
