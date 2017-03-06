@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { TimelinePage } from '../timeline/timeline'
 import { TopPage } from '../top/top'
 import { UsersPage } from '../users/users'
@@ -14,8 +14,13 @@ export class HomePage {
   tab2Root: any = TopPage;
   tab3Root: any = UsersPage;
 
-  constructor(public navCtrl: NavController) {
+  mySelectedIndex: number = 0;
 
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
+    this.mySelectedIndex = this.navParams.get('tabIndex')|| 0;
   }
 
 }

@@ -11,6 +11,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TopPage } from '../pages/top/top';
 import { UsersPage } from '../pages/users/users';
 import { TimelinePage } from '../pages/timeline/timeline';
+import { GridsPage } from '../pages/grids/grids';
+import { ButtonsPage } from '../pages/buttons/buttons';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TimelinePage } from '../pages/timeline/timeline';
     SettingsPage,
     TopPage,
     UsersPage,
-    TimelinePage
+    TimelinePage,
+    GridsPage,
+    ButtonsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +44,9 @@ import { TimelinePage } from '../pages/timeline/timeline';
     SettingsPage,
     TopPage,
     UsersPage,
-    TimelinePage
+    TimelinePage,
+    GridsPage,
+    ButtonsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

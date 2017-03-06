@@ -1,1 +1,33 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="menu" [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-list-header>
+        Menu pages
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let page of menuPages" (click)="openTabPage(page)">
+        <ion-icon item-left [name]="page.icon"></ion-icon>
+        {{page.title}}
+      </button>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        Examples pages
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let page of examplesPages" (click)="openPage(page)">
+        <ion-icon item-left [name]="page.icon"></ion-icon>
+        {{page.title}}
+      </button>
+      <button ion-item menuClose (click)="logout()">
+        <ion-icon item-left name="close"></ion-icon>
+        Cerrar sesión
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>
