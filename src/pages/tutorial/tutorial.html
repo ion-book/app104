@@ -10,8 +10,14 @@
       <p>Comparte tus increibles albumnes con tus amigos</p>
     </ion-slide>
   </ion-slides>
-  <div class="buttons">
-    <button ion-button (click)="goToLoginPage()">Ingresar</button>
-    <button ion-button (click)="goToRegisterPage()">Registrar</button>
-  </div>
+  <ion-grid class="buttons">
+    <ion-row>
+      <ion-col>
+        <button ion-button block (click)="goToLoginPage()">Ingresar</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block (click)="goToRegisterPage()">Registrar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

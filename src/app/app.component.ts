@@ -41,12 +41,12 @@ export class MyApp {
     {
       title: 'Grids',
       icon: 'grid',
-      component: ButtonsPage
+      component: GridsPage,
     },
     {
       title: 'Buttons',
       icon: 'archive',
-      component: GridsPage
+      component: ButtonsPage
     },
   ];
 
