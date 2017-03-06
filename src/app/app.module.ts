@@ -13,6 +13,9 @@ import { UsersPage } from '../pages/users/users';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { GridsPage } from '../pages/grids/grids';
 import { ButtonsPage } from '../pages/buttons/buttons';
+import { AlbumDetailPage } from '../pages/album-detail/album-detail';
+
+import { AlbumsService } from '../providers/albums-service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { ButtonsPage } from '../pages/buttons/buttons';
     UsersPage,
     TimelinePage,
     GridsPage,
-    ButtonsPage
+    ButtonsPage,
+    AlbumDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -46,8 +50,12 @@ import { ButtonsPage } from '../pages/buttons/buttons';
     UsersPage,
     TimelinePage,
     GridsPage,
-    ButtonsPage
+    ButtonsPage,
+    AlbumDetailPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AlbumsService
+  ]
 })
 export class AppModule {}

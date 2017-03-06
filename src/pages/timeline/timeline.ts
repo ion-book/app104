@@ -1,22 +1,29 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Timeline page.
+import { AlbumsService } from '../../providers/albums-service';
+import { AlbumDetailPage } from '../album-detail/album-detail';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-timeline',
   templateUrl: 'timeline.html'
 })
 export class TimelinePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  albums: any[] = [];
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public albumsService: AlbumsService
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TimelinePage');
+    this.albums = this.albumsService.getALL();
+  }
+
+  goToAlbumDetailPage(){
+    this.navCtrl.push( AlbumDetailPage );
   }
 
 }
