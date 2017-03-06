@@ -1,3 +1,23 @@
 page-tutorial {
-
+ ion-slide{
+   background-size: auto 100%;
+   &.slide1{
+     background-image: url('../assets/imgs/img1.jpg');
+   }
+   &.slide2{
+     background-image: url('../assets/imgs/img2.jpg');
+   }
+   &.slide3{
+     background-image: url('../assets/imgs/img3.jpg');
+   }
+   p{
+     color: white;
+     text-shadow: 0px 0px 3px black;
+   }
+ }
+ .buttons{
+   position: absolute;
+   bottom: 50px;
+   z-index: 2;
+ }
 }

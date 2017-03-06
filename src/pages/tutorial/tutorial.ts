@@ -1,22 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Tutorial page.
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-tutorial',
   templateUrl: 'tutorial.html'
 })
 export class TutorialPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TutorialPage');
+  }
+
+  goToLoginPage(){
+    this.navCtrl.push( LoginPage );
+  }
+
+  goToRegisterPage(){
+    this.navCtrl.push( RegisterPage );
   }
 
 }
