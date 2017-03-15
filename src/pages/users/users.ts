@@ -8,6 +8,8 @@ import { UserService } from '../../providers/user-service';
   templateUrl: 'users.html'
 })
 export class UsersPage {
+  
+  users: any[] = [];
 
   constructor(
     public navCtrl: NavController,
@@ -16,7 +18,7 @@ export class UsersPage {
   ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UsersPage');
+    this.users = this.userService.getALL();
   }
 
 }

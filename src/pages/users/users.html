@@ -16,6 +16,26 @@
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button>Hola</button>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item >
+        <ion-avatar item-left>
+          <img [src]="user.picture.medium">
+        </ion-avatar>
+        <h2>{{ user.name.first }}</h2>
+        <p>{{ user.email }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
