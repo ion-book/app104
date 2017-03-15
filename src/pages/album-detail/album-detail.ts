@@ -58,9 +58,14 @@ export class AlbumDetailPage {
     console.log('ionViewDidLoad AlbumDetailPage');
   }
 
-  openGallery(){
-    let modal = this.modalCtrl.create( GalleryPage );
+  openGallery(photo){
+    let modal = this.modalCtrl.create( GalleryPage, {
+      photo: photo
+    });
     modal.present();
+    modal.onDidDismiss(data =>{
+      console.log(data);
+    })
   }
 
 }
