@@ -1,21 +1,23 @@
-<!--
-  Generated template for the Top page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>top</ion-title>
+    <ion-searchbar
+      [(ngModel)]="query"
+      showCancelButton="true"
+      (ionInput)="onInput()">
+    </ion-searchbar>
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col width-33 *ngFor="let album of albums">
+        <img src="http://placehold.it/100x100" alt="image">
+        <p>{{ album.title }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
