@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col width-33 *ngFor="let photo of photos">
+      <ion-col width-33 *ngFor="let photo of photos" (click)="openGallery()">
         <img [src]="photo.image" alt="image">
       </ion-col>
     </ion-row>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { GalleryPage } from '../gallery/gallery';
 
 
 @Component({
@@ -47,10 +48,19 @@ export class AlbumDetailPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public modalCtrl: ModalController
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlbumDetailPage');
+  }
+
+  openGallery(){
+    let modal = this.modalCtrl.create( GalleryPage );
+    modal.present();
   }
 
 }
