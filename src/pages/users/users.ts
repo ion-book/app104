@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { UserService } from '../../providers/user-service';
 
@@ -14,11 +14,80 @@ export class UsersPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public userService: UserService
+    public userService: UserService,
+    public alertCtrl: AlertController
   ) {}
 
   ionViewDidLoad() {
     this.users = this.userService.getALL();
+  }
+
+  sendSms(){
+    let alert = this.alertCtrl.create({
+      title: 'Cuidado',
+      subTitle: 'El mensaje se descontara de tu plan de datos',
+      buttons: ['Aceptar']
+    });
+    alert.present();
+  }
+
+  call(){
+    let alert = this.alertCtrl.create({
+      title: '¿Estas seguro?',
+      subTitle: 'Esta persona no es buena, estas seguro que quieras llamarla',
+      buttons: [
+        {
+          text: 'No llamar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+        text: 'Si llamar',
+        handler: () => {
+          console.log('yes clicked');
+        }
+      }
+      ]
+    });
+    alert.present();
+  }
+
+  share(){
+    let alert = this.alertCtrl.create({
+      title: '¿Estas seguro?',
+      subTitle: 'Escribe tu mensaje',
+      inputs: [
+        {
+          name: 'message',
+          placeholder: 'Escribe tu mensaje',
+          type:"text"
+        },
+        {
+          name: 'more',
+          placeholder: 'Escribe tu mensaje'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+        text: 'Compartir',
+        handler: (data) => {
+          console.log(data.message);
+          console.log(data.more);
+          console.log('yes clicked');
+        }
+      }
+      ]
+    });
+    alert.present();
   }
 
 }

@@ -27,13 +27,17 @@
         <p>{{ user.email }}</p>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="primary">
+        <button ion-button color="primary" (click)="sendSms()">
           <ion-icon name="text"></ion-icon>
           Text
         </button>
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" (click)="call()">
           <ion-icon name="call"></ion-icon>
           Call
+        </button>
+        <button ion-button color="danger" (click)="share()">
+          <ion-icon name="share"></ion-icon>
+          Share
         </button>
       </ion-item-options>
     </ion-item-sliding>
