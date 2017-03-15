@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Users page.
+import { UserService } from '../../providers/user-service';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-users',
   templateUrl: 'users.html'
 })
 export class UsersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public userService: UserService
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsersPage');

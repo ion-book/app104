@@ -16,6 +16,7 @@ import { ButtonsPage } from '../pages/buttons/buttons';
 import { AlbumDetailPage } from '../pages/album-detail/album-detail';
 
 import { AlbumsService } from '../providers/albums-service';
+import { UserService } from '../providers/user-service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AlbumsService } from '../providers/albums-service';
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AlbumsService
+    AlbumsService,
+    UserService
   ]
 })
 export class AppModule {}
