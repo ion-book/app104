@@ -7,6 +7,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { HomePage } from '../pages/home/home';
 import { ButtonsPage } from '../pages/buttons/buttons';
 import { GridsPage } from '../pages/grids/grids';
+import { StylesPage } from '../pages/styles/styles';
 
 @Component({
   templateUrl: 'app.html'
@@ -48,6 +49,11 @@ export class MyApp {
       title: 'Buttons',
       icon: 'archive',
       component: ButtonsPage
+    },
+    {
+      title: 'Styles',
+      icon: 'logo-sass',
+      component: StylesPage
     },
   ];
 

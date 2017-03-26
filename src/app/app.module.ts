@@ -18,6 +18,7 @@ import { GridsPage } from '../pages/grids/grids';
 import { ButtonsPage } from '../pages/buttons/buttons';
 import { AlbumDetailPage } from '../pages/album-detail/album-detail';
 import { GalleryPage } from '../pages/gallery/gallery';
+import { StylesPage } from '../pages/styles/styles';
 
 import { AlbumsService } from '../providers/albums-service';
 import { UserService } from '../providers/user-service';
@@ -37,7 +38,8 @@ import { UserService } from '../providers/user-service';
     GridsPage,
     ButtonsPage,
     AlbumDetailPage,
-    GalleryPage
+    GalleryPage,
+    StylesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -58,7 +60,8 @@ import { UserService } from '../providers/user-service';
     GridsPage,
     ButtonsPage,
     AlbumDetailPage,
-    GalleryPage
+    GalleryPage,
+    StylesPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
