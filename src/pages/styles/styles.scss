@@ -1,20 +1,4 @@
 page-styles {
-
- .message {
-  border: 5px solid #ccc;
-  padding: 10px;
-  color: #333;
-  margin-bottom: 5px;
-}
-.success{
-  @extend .message;
-  border-color: green;
-}
-.danger{
-  @extend .message;
-  border-color: color($colors, twitter, contrast);
-  background-color: color($colors, primary);
-}
  
  h1.title{
    color: $my-color;
