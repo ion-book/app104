@@ -13,6 +13,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class StylesPage {
 
+  icon: string = 'home';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {

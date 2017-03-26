@@ -34,4 +34,10 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ea veritatis vero quam, illum accusamus, nihil itaque alias minima a cumque maiores voluptatem! Eius accusamus libero magnam, aspernatur, reiciendis nobis.</p>
   </div>
   <p text-underline>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus odit nemo, dolorem in illum, odio reprehenderit nesciunt nulla vel dicta officiis assumenda error mollitia tempore voluptatibus fugiat vero. Ad, modi.</p>
+
+  <button ion-button block (click)="icon = 'close'">close</button>
+  <button ion-button block (click)="icon = 'logo-css3'">logo-css3</button>
+  <button ion-button block (click)="icon = 'logo-github'">logo-github</button>
+
+  <ion-icon [name]="icon"></ion-icon>
 </ion-content>
