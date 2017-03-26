@@ -14,7 +14,7 @@ import { StylesPage } from '../pages/styles/styles';
 })
 export class MyApp {
   
-  rootPage = TutorialPage;
+  rootPage = StylesPage;
 
   @ViewChild(Nav) nav: Nav;
 

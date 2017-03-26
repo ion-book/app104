@@ -1,3 +1,38 @@
 page-styles {
+ $my-color: green;
 
+ .message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  margin-bottom: 5px;
+}
+.success{
+  @extend .message;
+  border-color: green;
+}
+.danger{
+  @extend .message;
+  border-color: red;
+}
+ 
+ h1.title{
+   color: $my-color;
+ }
+ div.text{
+   @include my-border(10px, $my-color);
+   > p{
+     color: white;
+     strong{
+       color: red;
+     }
+   }
+ }
+ div.otro{
+   p{
+     @include my-font-size(30px);
+   }
+ }
+
+ 
 }

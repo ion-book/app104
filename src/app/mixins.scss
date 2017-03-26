@@ -1,0 +1,11 @@
+@mixin my-border($radius, $color) {
+  -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+  background: $color;
+}
+
+@mixin my-font-size($size) {
+  font-size: $size;
+}
