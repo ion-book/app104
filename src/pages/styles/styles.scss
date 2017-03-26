@@ -1,7 +1,7 @@
 page-styles {
 
  .message {
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
   padding: 10px;
   color: #333;
   margin-bottom: 5px;
@@ -12,7 +12,8 @@ page-styles {
 }
 .danger{
   @extend .message;
-  border-color: red;
+  border-color: color($colors, twitter, contrast);
+  background-color: color($colors, primary);
 }
  
  h1.title{

@@ -32,31 +32,37 @@ $colors: (
   blue:     blue,
   twitter:(
     base: #55acee,
-    contrast: white,
+    contrast: black,
   )
 );
 
+
+$backdrop-color: red;
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
-
+// $action-sheet-ios-text-align: left;
+// $action-sheet-ios-padding: 0px;
+// $action-sheet-ios-group-margin-bottom: 0px;
+// $action-sheet-ios-button-padding: 0px;
+// $action-sheet-ios-border-radius: 0px;
+$button-ios-border-radius: 20px;
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$button-md-border-radius: 20px;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
-
+$alert-wp-backdrop-background: red;
+$button-wp-border-radius: 20px;
 
 // App Theme
 // --------------------------------------------------
