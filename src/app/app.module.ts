@@ -2,6 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { RegisterPage } from '../pages/register/register';
@@ -59,6 +62,10 @@ import { UserService } from '../providers/user-service';
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    //native
+    StatusBar,
+    SplashScreen,
+    //Services
     AlbumsService,
     UserService
   ]
