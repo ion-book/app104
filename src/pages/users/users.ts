@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
 
 import { UserService } from '../../providers/user-service';
 
@@ -15,7 +15,8 @@ export class UsersPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public userService: UserService,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public actionSheetCtrl: ActionSheetController
   ) {}
 
   ionViewDidLoad() {
@@ -54,6 +55,7 @@ export class UsersPage {
     alert.present();
   }
 
+  /*
   share(){
     let alert = this.alertCtrl.create({
       title: '¿Estas seguro?',
@@ -88,6 +90,45 @@ export class UsersPage {
       ]
     });
     alert.present();
+  }
+  */
+
+  share(){
+    let action = this.actionSheetCtrl.create({
+      title: 'Mis opciones',
+      buttons: [
+        {
+          text: 'Compartir',
+          icon: 'share',
+          handler: ()=>{
+            console.log('click share');
+          }
+        },
+        {
+          text: 'Compartir',
+          handler: ()=>{
+            console.log('click share');
+          }
+        },
+        {
+          text: 'Borrar',
+          role: 'destructive',
+          icon: 'trash',
+          handler: ()=>{
+            console.log('click borrar');
+          }
+        },
+        {
+         text: 'Cancel',
+         role: 'cancel',
+         icon: 'close',
+         handler: () => {
+           console.log('Cancel clicked');
+         }
+       }
+      ]
+    });
+    action.present();
   }
 
 }
