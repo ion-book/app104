@@ -33,14 +33,19 @@
         <p color="danger" *ngIf="myForm.get('age').hasError('required')">Campo requerido</p>
         <p color="danger" *ngIf="myForm.get('age').hasError('isold')">tienes que ser mayor</p>
       </ion-item>
-      <ion-item>
-        <ion-label stacked>Password:</ion-label>
-        <ion-input type="password" placeholder="Ej: 123345" formControlName="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label stacked>Confirmar Password:</ion-label>
-        <ion-input type="password" placeholder="Ej: 123345" formControlName="confirmPassword"></ion-input>
-      </ion-item>
+      <div formGroupName="passwordGroup">
+        <ion-item>
+          <ion-label stacked>Password:</ion-label>
+          <ion-input type="password" placeholder="Ej: 123345" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Confirmar Password:</ion-label>
+          <ion-input type="password" placeholder="Ej: 123345" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('passwordGroup').errors && myForm.get('passwordGroup').get('confirmPassword').dirty">
+          <p color="danger">Las constraseñas no son iguales</p>
+        </ion-item>
+      </div>
       <ion-item>
         <ion-label>Banda</ion-label>
         <ion-select cancelText="Nah" okText="Okay!" formControlName="rockband">

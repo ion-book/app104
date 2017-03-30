@@ -23,8 +23,12 @@ export class RegisterPage {
       'email': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15)]],
       'nickname': ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
       'age': ['', [Validators.required, MyValidators.isOld]],
-      'password': ['',[Validators.required]],
-      'confirmPassword': ['', [Validators.required]],
+      'passwordGroup': this.formBuiler.group({
+        'password': ['',[Validators.required]],
+        'confirmPassword': ['', [Validators.required]],
+      }, {
+        validator: MyValidators.passwordMatcher
+      }),
       'rockband': ['3', [Validators.required]],
       'date': ['', [Validators.required]],
       'children': [5],

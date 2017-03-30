@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { FormControl, AbstractControl } from '@angular/forms';
 
 export class MyValidators{
 
@@ -9,6 +9,17 @@ export class MyValidators{
     }else{
       return {'isold': true}
     }
+  }
+
+  static passwordMatcher(group: AbstractControl){
+    let password = group.get('password').value;
+    let confimPassword = group.get('confirmPassword').value;
+    if(password === confimPassword){
+      return null;
+    }else{
+      return {'nomatch': true};
+    }
+
   }
 
 }
