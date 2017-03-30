@@ -21,13 +21,15 @@ export class RegisterPage {
       'email': [''],
       'password': [''],
       'confirmPassword': [''],
-      'rockband': [''],
+      'rockband': ['nirvana'],
       'date': [''],
-      'children': [''],
-      'favorite': [''],
+      'children': [5],
       'language': [''],
       'enablePush': [''],
-      'enableEmail': ['']
+      'enableEmail': [''],
+      'vainilla': [false],
+      'chocolate': [true],
+      'fresa': [true]
     });
   }
 
