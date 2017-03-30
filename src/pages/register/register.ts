@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { MyValidators } from '../../validators/validators';
+
 import { HomePage } from '../home/home';
 
 @Component({
@@ -20,6 +22,7 @@ export class RegisterPage {
     this.myForm = this.formBuiler.group({
       'email': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15)]],
       'nickname': ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      'age': ['', [Validators.required, MyValidators.isOld]],
       'password': ['',[Validators.required]],
       'confirmPassword': ['', [Validators.required]],
       'rockband': ['3', [Validators.required]],

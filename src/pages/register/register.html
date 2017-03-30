@@ -26,6 +26,14 @@
         <p color="danger" *ngIf="myForm.get('nickname').hasError('pattern')">no debe tener caracteres</p>
       </ion-item>
       <ion-item>
+        <ion-label stacked>edad:</ion-label>
+        <ion-input type="number" placeholder="Ej: mail@mail.com" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('age').errors && myForm.get('age').dirty">
+        <p color="danger" *ngIf="myForm.get('age').hasError('required')">Campo requerido</p>
+        <p color="danger" *ngIf="myForm.get('age').hasError('isold')">tienes que ser mayor</p>
+      </ion-item>
+      <ion-item>
         <ion-label stacked>Password:</ion-label>
         <ion-input type="password" placeholder="Ej: 123345" formControlName="password"></ion-input>
       </ion-item>
