@@ -6,23 +6,23 @@
 
 
 <ion-content>
-  <form novalidate>
+  <form novalidate (ngSubmit)="saveData( $event )" [formGroup]="myForm">
     <ion-list>
       <ion-item>
         <ion-label stacked>Correo:</ion-label>
-        <ion-input type="email" placeholder="Ej: mail@mail.com"></ion-input>
+        <ion-input type="email" placeholder="Ej: mail@mail.com" formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Password:</ion-label>
-        <ion-input type="password" placeholder="Ej: 123345"></ion-input>
+        <ion-input type="password" placeholder="Ej: 123345" formControlName="password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Confirmar Password:</ion-label>
-        <ion-input type="password" placeholder="Ej: 123345"></ion-input>
+        <ion-input type="password" placeholder="Ej: 123345" formControlName="confirmPassword"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Banda</ion-label>
-        <ion-select cancelText="Nah" okText="Okay!">
+        <ion-select cancelText="Nah" okText="Okay!" formControlName="rockband">
           <ion-option value="1">Nirvana</ion-option>
           <ion-option value="2">Los prisioneros</ion-option>
           <ion-option value="3">Cafe tacuba</ion-option>
@@ -31,11 +31,11 @@
       </ion-item>
       <ion-item>
         <ion-label>Cumpleaños</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label>numeros hijos</ion-label>
-        <ion-range min="0" max="10" color="secondary" pin="true">
+        <ion-range min="0" max="10" color="secondary" pin="true" formControlName="children">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>10</ion-label>
         </ion-range>
@@ -45,25 +45,25 @@
       <ion-list-header>Tu sabor favorito</ion-list-header>
       <ion-item>
         <ion-label>Vainilla</ion-label>
-        <ion-checkbox color="blue"></ion-checkbox>
+        <ion-checkbox color="blue" formControlName="favorite"></ion-checkbox>
       </ion-item>
       <ion-item>
         <ion-label>Chocolate</ion-label>
-        <ion-checkbox color="blue"></ion-checkbox>
+        <ion-checkbox color="blue" formControlName="favorite"></ion-checkbox>
       </ion-item>
       <ion-item>
         <ion-label>Fresa</ion-label>
-        <ion-checkbox color="blue"></ion-checkbox>
+        <ion-checkbox color="blue" formControlName="favorite"></ion-checkbox>
       </ion-item>
     </ion-list>
-    <ion-list radio-group>
+    <ion-list radio-group formControlName="language">
       <ion-list-header>
         Language
       </ion-list-header>
 
       <ion-item>
         <ion-label>Go</ion-label>
-        <ion-radio value="go"></ion-radio>
+        <ion-radio value="go" ></ion-radio>
       </ion-item>
 
       <ion-item>
@@ -80,15 +80,15 @@
       <ion-list-header>Notificaciones</ion-list-header>
       <ion-item>
         <ion-label>Push</ion-label>
-        <ion-toggle></ion-toggle>
+        <ion-toggle formControlName="enablePush"></ion-toggle>
       </ion-item>
       <ion-item>
         <ion-label>Email</ion-label>
-        <ion-toggle></ion-toggle>
+        <ion-toggle formControlName="enableEmail"></ion-toggle>
       </ion-item>
     </ion-list>
     <div padding>
-      <button ion-button block  type="button" (click)="goToHomePage()" icon-left>
+      <button ion-button block  type="submit" icon-left>
         <ion-icon name="log-in"></ion-icon>
         Registrar
       </button>
