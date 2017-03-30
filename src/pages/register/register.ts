@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
@@ -18,11 +18,12 @@ export class RegisterPage {
     public formBuiler: FormBuilder
   ) {
     this.myForm = this.formBuiler.group({
-      'email': [''],
-      'password': [''],
-      'confirmPassword': [''],
-      'rockband': ['3'],
-      'date': [''],
+      'email': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15)]],
+      'nickname': ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      'password': ['',[Validators.required]],
+      'confirmPassword': ['', [Validators.required]],
+      'rockband': ['3', [Validators.required]],
+      'date': ['', [Validators.required]],
       'children': [5],
       'language': ['go'],
       'enablePush': [false],

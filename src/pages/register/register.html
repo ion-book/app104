@@ -12,6 +12,19 @@
         <ion-label stacked>Correo:</ion-label>
         <ion-input type="email" placeholder="Ej: mail@mail.com" formControlName="email"></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <p color="danger" *ngIf="myForm.get('email').hasError('required')">Campo requerido</p>
+        <p color="danger" *ngIf="myForm.get('email').hasError('minlength')">Minimo 10 campos</p>
+        <p color="danger" *ngIf="myForm.get('email').hasError('maxlength')">Maximo 15 campos</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>nickname:</ion-label>
+        <ion-input type="nickname" placeholder="Ej: mail@mail.com" formControlName="nickname"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('nickname').errors && myForm.get('nickname').dirty">
+        <p color="danger" *ngIf="myForm.get('nickname').hasError('required')">Campo requerido</p>
+        <p color="danger" *ngIf="myForm.get('nickname').hasError('pattern')">no debe tener caracteres</p>
+      </ion-item>
       <ion-item>
         <ion-label stacked>Password:</ion-label>
         <ion-input type="password" placeholder="Ej: 123345" formControlName="password"></ion-input>
@@ -88,7 +101,7 @@
       </ion-item>
     </ion-list>
     <div padding>
-      <button ion-button block  type="submit" icon-left>
+      <button ion-button block  type="submit" [disabled]="myForm.invalid" icon-left>
         <ion-icon name="log-in"></ion-icon>
         Registrar
       </button>
