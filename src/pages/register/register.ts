@@ -39,6 +39,15 @@ export class RegisterPage {
       'chocolate': [true],
       'fresa': [true]
     });
+
+    let obj = {
+      'email': 'nicolas@gmail.com',
+      'age': 19,
+      'children': 10,
+      'nickname': 'nicobytes'
+    }
+
+    this.myForm.patchValue(obj);
   }
 
   ionViewDidLoad() {
@@ -48,6 +57,10 @@ export class RegisterPage {
   saveData(event: Event){
     event.preventDefault();
     console.log(this.myForm.value);
+    console.log(this.myForm.value.age);
+    console.log(this.myForm.value.nickname);
+    console.log(this.myForm.value.passwordGroup.password);
+    console.log(this.myForm.value.passwordGroup.confirmPassword);
   }
 
   goToHomePage(){
