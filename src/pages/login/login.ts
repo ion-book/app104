@@ -9,10 +9,17 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
+  data: any = {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  saveData( event: Event ){
+    event.preventDefault();
+    console.log(this.data);
   }
 
   goToHomePage(){
