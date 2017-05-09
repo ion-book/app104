@@ -20,6 +20,7 @@ export class LoginPage {
   saveData( event: Event ){
     event.preventDefault();
     console.log(this.data);
+    this.navCtrl.setRoot( HomePage );
   }
 
   goToHomePage(){
